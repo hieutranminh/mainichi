@@ -4,7 +4,6 @@
   background-position: center center;
   padding: 60px 0px 0px;
   @include bp-ip6 {
-    height: 895px;
     .left {
       text-align: center;
       color: #ffffff;
@@ -57,7 +56,6 @@
     }
   }
   @include bp-desktop-sm {
-    height: 490px;
     .left {
       text-align: left;
       color: #ffffff;

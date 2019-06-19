@@ -1,2 +1,148 @@
 #header {
+  background: gainsboro;
+  .navbar {
+    margin: 0px;
+    &-header {
+      padding: 9px 0px;
+      .navbar-toggle {
+        background: transparent;
+        border: 1px solid;
+        @include border-radius(50%);
+        padding: 0;
+        width: 60px;
+        height: 60px;
+        margin: 0px 15px;
+        span {
+          margin: 4px auto;
+          background: #333333;
+          width: 20px;
+          height: 3px;
+        }
+      }
+      @media #{$info-phone} {
+        .navbar-brand {
+          width: 140px;
+          height: 40px;
+          margin: 10px 15px;
+          padding: 0;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    &-nav {
+      li {
+        margin-left: 40px;
+        list-style: none;
+        @media #{$info-phone}{
+          margin: 0;
+          text-align: center;
+        }
+        a {
+          position: relative;
+          text-transform: uppercase;
+          font-weight: bold;
+          color: #333333;
+          padding: 24px 0px;
+          display: inline-block;
+          @include transition(all 0.2s);
+          &:focus {
+            background: transparent;
+            outline: none;
+          }
+          &:hover {
+            color: #da251d;
+            background: transparent;
+            &:after {
+              opacity: 1;
+            }
+          }
+          &:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0px;
+            width: 30px;
+            height: 5px;
+            margin-left: -15px;
+            background: #da251d;
+            opacity: 0;
+            @include transition(all 0.2s);
+          }
+          @media #{$info-phone}{
+            padding: 0px;
+            margin: 10px;
+            &:after {
+              content: none;
+            }
+          }
+        }
+        //LI Class Active
+        &.active {
+          a {
+            color: #da251d;
+            &:after {
+              opacity: 1;
+            }
+          }
+        }
+        //LI Class Language
+        &.language {
+          position: relative;
+          padding: 21px 0px 21px 20px;
+          &:before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            width: 1px;
+            height: 30px;
+            margin-top: -15px;
+            background: #333333;
+          }
+          .fa-globe {
+            padding-right: 2px;
+            font-size: 14px;
+          }
+          a {
+            margin: 0;
+            padding: 0;
+            color: #b7b7b7;
+            &:after {
+              content: none;
+            }
+            &.active {
+              color: #333333;
+              border-bottom: 2px solid;
+            }
+          }
+          @media #{$info-phone}{
+            padding: 0;
+            margin: 10px;
+            &:before {
+              content: none;
+            }
+            &:after {
+              content: none;
+            }
+          }
+        }
+        //LI Class Search
+        &.search {
+          padding: 9px 0px;
+          .fa-search {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid;
+            cursor: pointer;
+            @include border-radius(50%);
+          }
+        }
+      }
+    }
+  }
 }

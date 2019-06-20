@@ -1,0 +1,130 @@
+//Name page
+.namepage {
+  @include flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #da251d;
+  height: 100px;
+  h4 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-transform: uppercase;
+  }
+}
+//Breadcrumb
+.breadcrumb-post {
+  @include bp-ip6 {
+    .breadcrumb {
+      padding: 18px 0px;
+      margin: 0px;
+      background-color: transparent;
+      li {
+        &.active {
+          color: #333333;
+          font-size: 12px;
+          text-transform: uppercase;
+        }
+        a {
+          color: #333333;
+          font-size: 12px;
+          text-transform: uppercase;
+          border-bottom: 1px solid #999999;
+        }
+      }
+    }
+  }
+}
+//Post list
+.post-list {
+  @include bp-ip6 {
+    .title {
+      position: relative;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      text-transform: uppercase;
+      margin: 18px 0px 30px;
+      &:before {
+        content: '';
+        width: 76px;
+        height: 5px;
+        background: #333333;
+        position: absolute;
+        left: 50%;
+        bottom: -6px;
+        margin-left: -38px;
+      }
+    }
+    .list-itembig {
+      border: 1px solid #e8e8e8;
+      &-content {
+        @include flex;
+        align-items: stretch;
+        .new {
+          @include flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #dc3029;
+          color: #FFFFFF;
+          font-size: 14px;
+          font-weight: bold;
+          padding: 0px 10px;
+        }
+        .content {
+          padding: 25px;
+          .caption-date {
+            color: #9c9c9c;
+            font-size: 14px;
+            font-weight: 500;
+            .fa-clock {
+              padding-right: 4px;
+            }
+          }
+          .caption-cate {
+            color: #dc3029;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid;
+            padding: 1px 3px;
+            margin-left: 8px;
+          }
+          .caption-title {
+            display: block;
+            color: #000000;
+            font-size: 14px;
+            font-weight: bold;
+            padding-top: 15px;
+          }
+        }
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  @include bp-desktop-sm {
+    .list-itembig {
+      &-content {
+        .new {
+          font-size: 22px;
+        }
+        .content {
+          padding: 45px 20px;
+          .caption-date {
+            font-size: 18px;
+          }
+          .caption-title {
+            font-size: 28px;
+            font-weight: bold;
+          }
+        }
+      }
+      img {
+        height: 100%;
+        max-height: 440px;
+      }
+    }
+  }
+}
